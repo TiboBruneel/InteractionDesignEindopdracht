@@ -1,0 +1,166 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>MarsWeather | Application</title>
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/screen.css">
+
+    <script src="/script/app.js"></script>
+</head>
+
+<body class="light">
+    <main class="c-application__box">
+        <div class="c-application__top">
+            <div class="c-logo__top">
+                <svg class="c-logo__svg" data-name="marsweather_logo" xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 97.86 97.86">
+                    <path class="cls-1"
+                        d="M93.22,45.87A48.68,48.68,0,1,0,141.9,94.55,48.67,48.67,0,0,0,93.22,45.87ZM59.42,76.69A13.74,13.74,0,1,1,73.16,90.43,13.74,13.74,0,0,1,59.42,76.69Zm21.24,56.15a7.51,7.51,0,1,1,7.5-7.51A7.5,7.5,0,0,1,80.66,132.84Zm32.45-65.57a4.31,4.31,0,1,1,4.31,4.31A4.31,4.31,0,0,1,113.11,67.27Zm2.43,70.25c0-27.57,25.72-37.26,25.72-37.26a49.12,49.12,0,0,1-10.65,25A48.59,48.59,0,0,1,115.54,137.52Z"
+                        transform="translate(-44.29 -45.62)" />
+                </svg>
+                <h1 class="c-logo__text">MarsWeather</h1>
+            </div>
+            <!-- <div class="c-settings__button">
+                <svg class="c-settings__svg" xmlns="http://www.w3.org/2000/svg" width="19.454" height="20"
+                    viewBox="0 0 19.454 20">
+                    <path class="c-settings__svg" id="Settings_Icon" data-name="Settings Icon"
+                        d="M19.43,12.98A7.793,7.793,0,0,0,19.5,12a7.793,7.793,0,0,0-.07-.98l2.11-1.65a.5.5,0,0,0,.12-.64l-2-3.46a.5.5,0,0,0-.61-.22l-2.49,1a7.306,7.306,0,0,0-1.69-.98l-.38-2.65A.488.488,0,0,0,14,2H10a.488.488,0,0,0-.49.42L9.13,5.07a7.683,7.683,0,0,0-1.69.98l-2.49-1a.488.488,0,0,0-.61.22l-2,3.46a.493.493,0,0,0,.12.64l2.11,1.65A7.931,7.931,0,0,0,4.5,12a7.931,7.931,0,0,0,.07.98L2.46,14.63a.5.5,0,0,0-.12.64l2,3.46a.5.5,0,0,0,.61.22l2.49-1a7.306,7.306,0,0,0,1.69.98l.38,2.65A.488.488,0,0,0,10,22h4a.488.488,0,0,0,.49-.42l.38-2.65a7.683,7.683,0,0,0,1.69-.98l2.49,1a.488.488,0,0,0,.61-.22l2-3.46a.5.5,0,0,0-.12-.64ZM12,15.5A3.5,3.5,0,1,1,15.5,12,3.5,3.5,0,0,1,12,15.5Z"
+                        transform="translate(-2.271 -2)" fill="#552500" />
+                </svg>
+            </div> -->
+        </div>
+
+        <div class="c-application__bot">
+            <div class="c-temperature">
+                <div class="c-temperature__part">
+                    <h2 class="c-temperature__title c-weather__title">Temperature</h2>
+                    <div class="c-progress">
+                        <div id="tempProgress" class="c-progress-bar" style="width: 0%;">
+                            <svg class="c-progress__temp-icon" xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 60.46 100">
+                                <path
+                                    d="M115.79,116.11C115.79,65.5,100,50,100,50S84.21,65.5,84.21,116.11c0,0-14.44,1.84-14.44,33.89l6.77-3.59S80.86,122,100,122s23.46,24.42,23.46,24.42l6.77,3.59C130.23,118,115.79,116.11,115.79,116.11ZM100,93.36a7.61,7.61,0,1,1,7.6-7.61A7.61,7.61,0,0,1,100,93.36Z"
+                                    transform="translate(-69.77 -50)" /></svg>
+                        </div>
+                    </div>
+                    <div class="c-progress__range">
+                        <h3 class="c-progress__count c-progressTemp__min">-110</h3>
+                        <h3 class="c-progress__count c-progressTemp__max">-20</h3>
+                    </div>
+                    <h1 class="c-temperature__measurement c-weather__measurement">
+                        <span class="c-temperature__value"> </span>
+                        <span class="c-temperature__unit">°C</span>
+                    </h1>
+                    <h3 class="c-temperature__description c-weather__description">For Mars, it's not that cold!</h3>
+                </div>
+            </div>
+
+            <div class="c-wind__part">
+                <h2 class="c-wind__title c-weather__title">Wind</h2>
+                <div class="c-progress">
+                    <div id="windProgress" class="c-progress-bar" style="width: 50%;">
+                        <svg class="c-progress__wind-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96.04 48.74">
+                            <defs>
+                                <style>
+                                    .cls-1 {
+                                        stroke-miterlimit: 10;
+                                        stroke-width: 0.5px;
+                                    }
+                                </style>
+                            </defs>
+                            <path class="cls-1"
+                                d="M121.29,95.14c5.63-17.45-11-21.53-11-21.53s-15.91-6.42-21.53,11c0,0-26.26-6.15-35.65,3,0,0,17.72,19.08,33.5,24.17a15.71,15.71,0,0,0,20.59,6.64c15.79,5.09,41.31,0,41.31,0C146.2,105.48,121.29,95.14,121.29,95.14Zm-17.55-1.31C92.79,90.3,89,84.67,89,84.67c5.54-17.2,21.22-10.88,21.22-10.88s16.42,4,10.88,21.23C121.08,95,114.69,97.36,103.74,93.83Z"
+                                transform="translate(-52.73 -72.2)" />
+                        </svg>
+                    </div>
+                </div>
+                <div class="c-progress__range">
+                    <h3 class="c-progress__count c-progressWind__min">0</h3>
+                    <h3 class="c-progress__count c-progressWind__max">80</h3>
+                </div>
+                <h1 class="c-wind__measurement c-weather__measurement">
+                    <span class="c-wind__value"> </span>
+                    <span class="c-wind__unit">KM/H</span>
+                </h1>
+                <h3 class="c-wind__description c-weather__description">It's a pretty calm day on Mars.</h3>
+            </div>
+        </div>
+
+        <div class="c-settings__part">
+            <div class="c-settings__button">
+                <svg class="c-settings__svg" xmlns="http://www.w3.org/2000/svg" width="19.454" height="20"
+                    viewBox="0 0 19.454 20">
+                    <path class="c-settings__svg" id="Settings_Icon" data-name="Settings Icon"
+                        d="M19.43,12.98A7.793,7.793,0,0,0,19.5,12a7.793,7.793,0,0,0-.07-.98l2.11-1.65a.5.5,0,0,0,.12-.64l-2-3.46a.5.5,0,0,0-.61-.22l-2.49,1a7.306,7.306,0,0,0-1.69-.98l-.38-2.65A.488.488,0,0,0,14,2H10a.488.488,0,0,0-.49.42L9.13,5.07a7.683,7.683,0,0,0-1.69.98l-2.49-1a.488.488,0,0,0-.61.22l-2,3.46a.493.493,0,0,0,.12.64l2.11,1.65A7.931,7.931,0,0,0,4.5,12a7.931,7.931,0,0,0,.07.98L2.46,14.63a.5.5,0,0,0-.12.64l2,3.46a.5.5,0,0,0,.61.22l2.49-1a7.306,7.306,0,0,0,1.69.98l.38,2.65A.488.488,0,0,0,10,22h4a.488.488,0,0,0,.49-.42l.38-2.65a7.683,7.683,0,0,0,1.69-.98l2.49,1a.488.488,0,0,0,.61-.22l2-3.46a.5.5,0,0,0-.12-.64ZM12,15.5A3.5,3.5,0,1,1,15.5,12,3.5,3.5,0,0,1,12,15.5Z"
+                        transform="translate(-2.271 -2)" fill="#552500" />
+                </svg>
+                <h2 class="c-settings__text">Settings</h2>
+            </div>
+        </div>
+
+    </main>
+
+    <div class="c-settings c-settings__nodisplay">
+        <div class="c-settings__box">
+            <div class="c-settings__top">
+                <h1 class="c-settings__title">Settings</h1>
+                <div class="c-settings__options">
+                    <input class="o-hide-accessible c-settings__input" type="radio" id="colormode1" name="colormode"
+                        checked>
+                    <label class="c-settings__radio" for="colormode1">Mars Sand Theme</label>
+
+                    <input class="o-hide-accessible c-settings__input" type="radio" id="colormode2" name="colormode">
+                    <label class="c-settings__radio" for="colormode2">Dark Galaxy Theme</label>
+                </div>
+
+                <div class="c-settings__options">
+                    <input class="o-hide-accessible c-settings__input" type="radio" id="tempunit1" name="tempunit"
+                        checked>
+                    <label class="c-settings__radio" for="tempunit1">Celsius Degrees</label>
+
+                    <input class="o-hide-accessible c-settings__input" type="radio" id="tempunit2" name="tempunit">
+                    <label class="c-settings__radio" for="tempunit2">Fahrenheit Degrees</label>
+                </div>
+
+                <div class="c-settings__options">
+                    <input class="o-hide-accessible c-settings__input" type="radio" id="windunit1" name="windunit"
+                        checked>
+                    <label class="c-settings__radio" for="windunit1">Kilometres per hour</label>
+
+                    <input class="o-hide-accessible c-settings__input" type="radio" id="windunit2" name="windunit">
+                    <label class="c-settings__radio" for="windunit2">Miles per hour</label>
+                </div>
+            </div>
+            <div class="c-settings__save-button">
+                <svg class="c-settings__save-check" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 9 6.75">
+                    <path
+                        d="M4.75,9.5a1,1,0,0,1-.707-.293l-2.25-2.25A1,1,0,1,1,3.207,5.543L4.75,7.086,8.793,3.043a1,1,0,0,1,1.414,1.414l-4.75,4.75A1,1,0,0,1,4.75,9.5"
+                        transform="translate(-1.5 -2.75)" />
+                </svg>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,889 @@
+/*------------------------------------*\
+#FONTS
+\*------------------------------------*/
+
+@font-face{
+    font-family: 'QuickSand';
+    font-weight: 400;
+    font-display: swap;
+    src: url('../fonts/Quicksand-Regular.ttf');
+}
+
+/*------------------------------------*\
+#Variables
+\*------------------------------------*/
+
+:root {
+    /* colors */
+    --global-color-light-x:#FFFFFF;
+    --global-color-light:#EFEFEF;
+    --global-color-mid:#E1E1E1;
+    --global-color-dark:#707070;
+    --global-color-dark-x:#000000;
+
+    --global-color-lightmode-light:#FF9E53;
+    --global-color-lightmode-dark:#552500;
+    --global-color-darkmode-light:#FFEFE2;
+    --global-color-darkmode-dark:#030033;
+    /* opacity */
+
+    /* transitions */
+}
+
+.light{
+    --global-main-color-back: var(--global-color-lightmode-light);
+    --global-main-color-front: var(--global-color-lightmode-dark);
+    --global-main-color-progress: var(--global-color-mid);
+    --global-settings-color-back: var(--global-main-color-back);
+    --global-settings-color-front: var(--global-main-color-front);
+}
+
+.dark{
+    --global-main-color-back: var(--global-color-darkmode-dark);
+    --global-main-color-front: var(--global-color-darkmode-light);
+    --global-main-color-progress: var(--global-color-dark);
+    --global-settings-color-back: var(--global-main-color-front);
+    --global-settings-color-front: var(--global-main-color-back);
+}
+
+/*------------------------------------*\
+#GENERIC
+\*------------------------------------*/
+
+/*
+    Generic: Page
+    ---
+    Global page styles + universal box-sizing:
+*/
+
+html {
+    font-size: 16px;
+    line-height: 1.5;
+    font-family: Arial, helvetica, sans-serif;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: "zero" 1;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body{
+    background-color: var(--global-main-color-back);
+    color: var(--global-main-color-front);
+}
+
+/*
+* Remove text-shadow in selection highlight:
+* https://twitter.com/miketaylr/status/12228805301
+*
+* Customize the background color to match your design.
+*/
+
+::-moz-selection {
+    background: var(--global-color-lightmode-light);
+    color: white;
+    text-shadow: none;
+}
+
+::selection {
+    background: var(--global-color-lightmode-light);
+    color: white;
+    text-shadow: none;
+}
+
+/*------------------------------------*\
+#Elements
+\*------------------------------------*/
+
+/*
+Elements: Images
+---
+Default markup for images to make them responsive
+*/
+
+img {
+    max-width: 100%;
+    vertical-align: top;
+}
+
+/*
+    Elements: typography
+    ---
+    Default markup for typographic elements
+*/
+
+h1,
+h2,
+h3 {
+    font-weight: 700;
+}
+
+h1 {
+    font-size: 36px;
+    line-height: 48px;
+    margin: 0 0 24px;
+}
+
+h2 {
+    font-size: 32px;
+    line-height: 40px;
+    margin: 0 0 24px;
+}
+
+h3 {
+    font-size: 26px;
+    line-height: 32px;
+    margin: 0 0 24px;
+}
+
+h4,
+h5,
+h6 {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    margin: 0 0 24px;
+}
+
+p,
+ol,
+ul,
+dl,
+table,
+address,
+figure {
+    margin: 0 0 24px;
+}
+
+ul,
+ol {
+    padding-left: 24px;
+}
+
+li ul,
+li ol {
+    margin-bottom: 0;
+}
+
+blockquote {
+    font-style: normal;
+    font-size: 23px;
+    line-height: 32px;
+    margin: 0 0 24px;
+}
+
+blockquote * {
+    font-size: inherit;
+    line-height: inherit;
+}
+
+figcaption {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    margin-top: 8px;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: LightGrey;
+    margin: 0 0 24px;
+}
+
+a {
+    color: red;
+    outline-color: red;
+    outline-width: medium;
+    outline-offset: 2px;
+}
+
+a:visited,
+a:active {
+    color: red;
+}
+
+a:hover,
+a:focus {
+    color: red;
+}
+
+label,
+input {
+    display: block;
+}
+
+select {
+    width: 100%;
+}
+
+input::placeholder {
+    color: gray;
+}
+
+/*------------------------------------*\
+#OBJECTS
+\*------------------------------------*/
+
+/*
+    Object: Button reset
+    ---
+    Small button reset object
+*/
+
+.o-button-reset {
+    border: none;
+    margin: 0;
+    padding: 0;
+    width: auto;
+    overflow: visible;
+    background: transparent;
+
+    /* inherit font & color from ancestor */
+    color: inherit;
+    font: inherit;
+
+    /* Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+. */
+    line-height: normal;
+
+    /* Corrects font smoothing for webkit */
+    -webkit-font-smoothing: inherit;
+    -moz-osx-font-smoothing: inherit;
+
+    /* Corrects inability to style clickable `input` types in iOS */
+    -webkit-appearance: none;
+}
+
+/*
+    Object: Hide accessible
+    ---
+    Accessibly hide any element
+*/
+
+.o-hide-accessible {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+/*------------------------------------*\
+#COMPONENTS
+\*------------------------------------*/
+
+/*
+    Component: Main landing page
+    ---
+    All components styling the main component on the landing page
+*/
+
+.c-landing{
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 30% 70%;
+    height: 100vh;
+}
+
+@media (min-width: 1000px){
+    .c-landing{
+        display: grid;
+        grid-template-rows: 100%;
+        grid-template-columns: 43% 57%;
+        height: 100vh;
+    }
+}
+
+/*
+    Component: Whitebox
+    ---
+    All components styling the whitebox and the content in it.
+*/
+
+.c-whitebox{
+    grid-row: 2;
+}
+
+.c-whitebox__content{
+    min-height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    padding: 80px 50px 50px 50px;
+
+    border-radius: 50px 50px 0px 0px;
+
+    background-color: var(--global-color-light-x);
+}
+
+.c-whitebox__title{
+    font-family: 'Quicksand';
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 30px;
+    color: var(--global-color-dark);
+}
+
+.c-whitebox__description{
+    font-family: Arial;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 20px;
+    color: var(--global-color-dark);
+}
+
+.c-whitebox__small-description{
+    font-family: Arial;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    color: var(--global-color-dark);
+
+    margin-bottom: 14px;
+}
+
+.c-whitebox__email{
+    width: 100%;
+    height: 30px;
+
+    border: none;
+    border-radius: 15px;
+
+    background-color: var(--global-color-light);
+    color: var(--global-color-dark);
+
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-bottom: 14px;
+
+    font-family: 'Quicksand';
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.c-whitebox__updates-option{
+    display: flex;
+}
+
+.c-whitebox__continue-button{
+    height: 30px;
+    width: 150px;
+
+    border: none;
+    border-radius: 15px;
+
+    background-color: var(--global-color-lightmode-light);
+    color: var(--global-color-light-x);
+    box-shadow: 0 3px 6px 0 rgba(0,0,0,0.16);
+
+    font-family: 'Quicksand';
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.c-whitebox__continue-button:focus,
+.c-whitebox__continue-button:hover{
+    box-shadow: none;
+}
+
+.c-whitebox__checkbox-label{
+    display: flex;
+    align-items: center;
+
+    font-family: Arial;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16px;
+    color: var(--global-color-dark);
+
+    margin-bottom: 40px;
+}
+
+.c-whitebox__checkbox-box{
+    border: 1px solid var(--global-color-dark);
+    border-radius: 2px;
+
+    width: 16px;
+    height: 16px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-right: 10px;
+}
+
+.c-whitebox__checkbox-icon{
+    width: 12px;
+    fill: var(--global-color-dark);
+    opacity: 0;
+}
+
+.c-whitebox__checkbox-input:focus + .c-whitebox__checkbox-label .c-whitebox__checkbox-box{
+    box-shadow: 0 0 0 3px rgba(112, 112, 112, .3);
+}
+
+.c-whitebox__checkbox-input:checked + .c-whitebox__checkbox-label .c-whitebox__checkbox-icon{
+    opacity: 1;
+}
+
+@media (min-width: 1000px){
+    .c-whitebox{
+        grid-row: 1;
+
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    .c-whitebox__content{
+        max-width: 450px;
+        min-height: 600px;
+
+        border-radius: 10px;
+    }
+}
+
+/*
+    Component: MarsWeather Logo
+    ---
+    All components styling the MarsWeather logo
+*/
+
+.c-logo{
+    grid-row: 1;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.c-logo__content{
+    max-width: 150px;
+}
+
+.c-logo__top{
+    width: 100px;
+
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.c-logo__svg{
+    height: 50px;
+    width: 50px;
+
+    fill: var(--global-main-color-front);
+
+    margin-bottom: 10px;
+}
+
+.c-logo__text{
+    font-family: 'Quicksand';
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 20px;
+    color: var(--global-main-color-front);
+}
+
+@media (min-width: 1000px){
+    .c-logo{
+        grid-column: 2;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .c-logo__content{
+        max-width: 393px;
+        max-height: 379px;
+    }
+}
+
+/*
+    Component: Application box
+    ---
+    All components styling the application box²
+*/
+.c-application__box{
+    max-width: 300px;
+    height: 100vh;
+
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    padding: 30px 0 30px 0;
+}
+
+.c-application__top{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.c-application__bot{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/*
+    Component: Settings part
+    ---
+    All components styling the settings part
+*/
+.c-settings__part{
+    display: flex;
+    justify-content: center;
+}
+
+.c-settings__button{
+    display: flex;
+    flex-flow: column wrap;
+
+    cursor: pointer;
+}
+
+.c-settings__svg{
+    width: 20px;
+    height: 20px;
+
+    margin: auto;
+    margin-bottom: 12px;
+
+    fill: var(--global-main-color-front);
+}
+
+.c-settings__text{
+    font-family: 'Arial';
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 25px;
+    color: var(--global-main-color-front);
+    margin: 0;
+}
+/*
+    Component: Temperature part
+    ---
+    All components styling the temperature part
+*/
+.c-temperature{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin-bottom: 50px;
+}
+
+/*
+    Component: Weather fonts
+    ---
+    All components styling the weather elements
+*/
+.c-weather__title{
+    font-family: 'Arial';
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 25px;
+    color: var(--global-main-color-front);
+
+    margin-bottom: 50px;
+
+    display: flex;
+    justify-content: center;
+}
+
+.c-weather__measurement{
+    font-family: 'Quicksand';
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 50px;
+    color: var(--global-main-color-front);
+
+    margin: 12px;
+
+    display: flex;
+    justify-content: center;
+}
+
+.c-weather__description{
+    font-family: 'Arial';
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    color: var(--global-main-color-front);
+
+    display: flex;
+    justify-content: center;
+}
+
+/*
+    Component: Progress Bar
+    ---
+    All components styling the progress bar
+*/
+.c-progress{
+    width: 250px;
+    overflow: visible;
+    background: var(--global-main-color-progress);
+
+    margin-bottom: 10px;
+}
+
+.c-progress-bar{
+    height: 2px;
+    position: relative;
+    animation: animate-positive 2s ease-out;
+
+    background-color: var(--global-main-color-front);
+}
+
+.c-progress__temp-icon{
+    height: 24px;
+
+    position: absolute;
+    margin-top: -11px;
+
+    margin-right: -10px;
+    right: 0;
+
+    fill: var(--global-main-color-front);
+
+    transform: rotate(90deg);
+}
+
+.c-progress__wind-icon{
+    height: 14px;
+
+    position: absolute;
+    margin-top: -7px;
+
+    margin-right: -10px;
+    right: 0;
+
+    stroke: var(--global-main-color-front);
+    fill: var(--global-main-color-front);
+}
+
+.c-progress__range{
+    display: flex;
+    justify-content: space-between;
+}
+
+.c-progress__count{
+    font-family: 'Arial';
+    font-size: 16px;
+    color: var(--global-main-color-front);
+}
+
+@-webkit-keyframes animate-positive {
+    0% { width: 0%; }
+}
+
+@keyframes animate-positive {
+    0% { width: 0%; }
+}
+
+/*
+    Component: Settings
+    ---
+    All components styling the settings
+*/
+.c-settings{
+    width: 100vw;
+    height: 100vh;
+
+    top: 0;
+
+    position: absolute;
+
+    background-color: rgba(0,0,0,0.40);
+}
+
+.c-settings__nodisplay{
+    display: none;
+}
+
+.c-settings__display{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.c-settings__box{
+    width: 400px;
+    height: 400px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    border-radius: 10px;
+
+    background-color: var(--global-color-light-x);
+}
+
+.c-settings__title{
+    display: flex;
+    justify-content: center;
+
+    font-family: 'Quicksand';
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 25px;
+    color: var(--global-settings-color-front);
+
+    margin-top: 30px;
+}
+
+.c-settings__options{
+    display: flex;
+
+    margin-bottom: 20px;
+}
+
+.c-settings__radio{
+    display: flex;
+    justify-content: center;
+
+    padding: 10px 0 10px 0;
+    width: 170px;
+
+    border-radius: 23px 0 0 23px;
+    border: 1px solid var(--global-settings-color-front);
+
+    color: var(--global-settings-color-front);
+
+    background-color: var(--global-color-light-x);
+}
+
+.c-settings__radio + .c-settings__input + .c-settings__radio{
+    border-radius: 0 23px 23px 0;
+}
+
+.c-settings__input:checked + .c-settings__radio{
+    color: var(--global-settings-color-back);
+    background-color: var(--global-settings-color-front);
+}
+
+.c-settings__save-button{
+    height: 40px;
+    width: 40px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-bottom: 30px;
+
+    border-radius: 50%;
+
+    background-color: var(--global-settings-color-front);
+}
+
+.c-settings__save-button:hover{
+    cursor: pointer;
+}
+
+.c-settings__save-check{
+    height: 12px;
+
+    fill: var(--global-settings-color-back);
+}
+
+/*------------------------------------*\
+#UTILITIES
+\*------------------------------------*/
+
+
+/*------------------------------------*\
+#STATES
+\*------------------------------------*/
+
+
+/*------------------------------------*\
+#MEDIA
+\*------------------------------------*/
+
+/*
+    Print styles.
+    ---
+    Inlined to avoid the additional HTTP request:
+    http://www.phpied.com/delay-loading-your-print-css/
+*/
+
+@media print {
+    *,
+    *:before,
+    *:after {
+        background: transparent !important;
+        color: #000 !important;
+        /* Black prints faster:
+        http://www.sanbeiji.com/archives/953 */
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+    /*
+    * Don't show links that are fragment identifiers,
+    * or use the `javascript:` pseudo protocol
+    */
+    a[href^="#"]:after,
+    a[href^="javascript:"]:after {
+        content: "";
+    }
+    pre {
+        white-space: pre-wrap !important;
+    }
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+    /*
+    * Printing Tables:
+    * http://css-discuss.incutio.com/wiki/Printing_Tables
+    */
+    thead {
+        display: table-header-group;
+    }
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}
