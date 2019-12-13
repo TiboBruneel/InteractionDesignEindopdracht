@@ -75,6 +75,8 @@ html {
 body{
     background-color: var(--global-main-color-back);
     color: var(--global-main-color-front);
+
+    transition: 1s ease-in;
 }
 
 /*
