@@ -784,6 +784,9 @@ input::placeholder {
     background-color: var(--global-settings-color-front);
 }
 
+/*
+    Save button styling
+*/
 .c-settings__save-button{
     height: 40px;
     width: 40px;
