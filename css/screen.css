@@ -499,6 +499,10 @@ input::placeholder {
     margin-bottom: 10px;
 }
 
+.c-logo__svg:hover{
+    animation: spin 8s linear infinite;
+}
+
 .c-logo__text{
     font-family: 'Quicksand';
     font-size: 18px;
@@ -578,6 +582,10 @@ input::placeholder {
     fill: var(--global-main-color-front);
 }
 
+.c-settings__svg:hover{
+    animation: spin 4s linear infinite;
+}
+
 .c-settings__text{
     font-family: 'Arial';
     font-weight: 400;
@@ -586,6 +594,15 @@ input::placeholder {
     color: var(--global-main-color-front);
     margin: 0;
 }
+
+@-webkit-keyframes spin { 
+    100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
+
+@keyframes spin { 
+    100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
+
 /*
     Component: Temperature part
     ---
