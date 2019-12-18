@@ -287,7 +287,6 @@ input::placeholder {
     ---
     All components styling the main component on the landing page
 */
-
 .c-landing{
     display: grid;
     grid-template-columns: auto;
@@ -556,54 +555,6 @@ input::placeholder {
 }
 
 /*
-    Component: Settings part
-    ---
-    All components styling the settings part
-*/
-.c-settings__part{
-    display: flex;
-    justify-content: center;
-}
-
-.c-settings__button{
-    display: flex;
-    flex-flow: column wrap;
-
-    cursor: pointer;
-}
-
-.c-settings__svg{
-    width: 20px;
-    height: 20px;
-
-    margin: auto;
-    margin-bottom: 12px;
-
-    fill: var(--global-main-color-front);
-}
-
-.c-settings__svg:hover{
-    animation: spin 4s linear infinite;
-}
-
-.c-settings__text{
-    font-family: 'Arial';
-    font-weight: 400;
-    font-size: 17px;
-    line-height: 25px;
-    color: var(--global-main-color-front);
-    margin: 0;
-}
-
-@-webkit-keyframes spin { 
-    100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
-
-
-@keyframes spin { 
-    100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
-
-
-/*
     Component: Temperature part
     ---
     All components styling the temperature part
@@ -726,10 +677,53 @@ input::placeholder {
 }
 
 /*
-    Component: Settings
+    Component: Settings part
     ---
-    All components styling the settings
+    All components styling the settings part
 */
+.c-settings__part{
+    display: flex;
+    justify-content: center;
+}
+
+.c-settings__button{
+    display: flex;
+    flex-flow: column wrap;
+
+    cursor: pointer;
+}
+
+.c-settings__svg{
+    width: 20px;
+    height: 20px;
+
+    margin: auto;
+    margin-bottom: 12px;
+
+    fill: var(--global-main-color-front);
+}
+
+.c-settings__svg:hover{
+    animation: spin 4s linear infinite;
+}
+
+.c-settings__text{
+    font-family: 'Arial';
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 25px;
+    color: var(--global-main-color-front);
+    margin: 0;
+}
+
+@-webkit-keyframes spin { 
+    100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
+
+@keyframes spin { 
+    100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
+    
 .c-settings{
     width: 100vw;
     height: 100vh;
