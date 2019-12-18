@@ -374,6 +374,13 @@ input::placeholder {
     line-height: 20px;
 }
 
+.c-whitebox__email:focus,
+.c-whitebox__email:hover{
+    box-shadow: 0 0 0 2px rgba(112, 112, 112, .3);
+    border: none;
+    outline: none;
+}
+
 .c-whitebox__updates-option{
     display: flex;
 }
@@ -398,6 +405,7 @@ input::placeholder {
 .c-whitebox__continue-button:focus,
 .c-whitebox__continue-button:hover{
     box-shadow: none;
+    outline: none;
 }
 
 .c-whitebox__checkbox-label{
