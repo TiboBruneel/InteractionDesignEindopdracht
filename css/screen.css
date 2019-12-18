@@ -309,7 +309,6 @@ input::placeholder {
     ---
     All components styling the whitebox and the content in it.
 */
-
 .c-whitebox{
     grid-row: 2;
 }
@@ -471,7 +470,6 @@ input::placeholder {
     ---
     All components styling the MarsWeather logo
 */
-
 .c-logo{
     grid-row: 1;
 
@@ -552,6 +550,7 @@ input::placeholder {
     flex-direction: column;
     align-items: center;
 }
+
 /*
     Component: Settings part
     ---
@@ -601,7 +600,7 @@ input::placeholder {
 }
 
 /*
-    Component: Weather fonts
+    Component: Weather elements
     ---
     All components styling the weather elements
 */
@@ -658,7 +657,7 @@ input::placeholder {
 .c-progress-bar{
     height: 2px;
     position: relative;
-    animation: animate-positive 2s ease-out;
+    animation: animate-positive 3s ease-out;
 
     background-color: var(--global-main-color-front);
 }
